@@ -1,0 +1,83 @@
+.body{
+    background-color: rgb(255, 255, 255);
+}
+.login-part{
+    
+    margin: 5% 10%;
+   
+}
+h1{
+    text-align: center;
+    padding-bottom: 20px;
+}
+.input-part{
+    padding: 50px;
+    margin-top: 3% ;
+    background-color: rgb(141, 247, 131);
+    
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgb(43, 104, 18);
+    
+}
+.button{
+    box-shadow: 2px 2px 5px rgb(133, 115, 115);
+}
+.after-click{
+    display: none;
+}
+.cards-1{
+    padding: 50px;
+
+}
+.row1{
+    
+
+    border-radius: 10px;
+    color: white;
+    font-size: 50px;
+    
+    box-shadow: 5px 5px 10px darkgray;
+}
+h3{
+    text-align: center;
+    padding: 20px;
+}
+.deposit{
+    background-color: rgb(74, 21, 172);
+}
+.withdraw{
+    background-color: rgb(160, 2, 107);
+
+}
+.balance{
+    background-color: rgb(170, 122, 19);
+
+}
+
+
+.card--1:hover{
+    background-color: rgb(110, 37, 245);
+    border-radius: 10px;
+}
+.card--2:hover{
+    background-color: rgb(224, 10, 153);
+    border-radius: 10px;
+}
+.card--3:hover{
+    background-color: rgb(243, 181, 47);
+    border-radius: 10px;
+}
+.transaction{
+    display: none;
+}
+
+.row2{
+    background-color: rgb(255, 255, 255);
+    
+    box-shadow: 5px 5px 15px black;
+    border-radius: 7px;
+
+}
+.dipo, .with{
+    padding: 20px;
+}
