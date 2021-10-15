@@ -29,19 +29,19 @@
                 <div class="deposit row1 row col-md-3">   
                    <span class="card--1">
                     <h3>Deposit</h3>
-                    <h1 id="currentdepositamount">$ 00</h1> 
+                    <h1">$ <span id="currentdepositamount">0</span></h1> 
                    </span>
                 </div>
                 <div class="withdraw row1 row col-md-3">
                     <span class="card--2">
                         <h3>Withdraw</h3>
-                        <h1 id="currentwithdrawamount">$ 00</h1>
+                        <h1 >$ <span id="currentwithdrawamount">0</span></h1>
                      </span>
                 </div>
                 <div class="balance row1 row col-md-3">
                     <span class="card--3">
                     <h3>Balance</h3>
-                    <h1>$ 00</h1>
+                    <h1>$ <span id="currentBlance">0</span></h1>
                 </span>
                 </div>
                     
@@ -53,7 +53,7 @@
                     <h2 >
                         Deposit 
                     </h2><span><br></span>
-                    <input id="ammountOfDeposit" type="number" class="  form-control " placeholder="$ amount you want to deposit"><span><br></span>
+                    <input id="ammountOfDeposit" type="number" min="0" value="" class="  form-control " placeholder="$ amount you want to deposit"><span><br></span>
                     <button id="depositBtn" class="btn btn-success "> Deposit</button>
                 </section>
                 <section class="with row2 row col-md-5">
@@ -91,22 +91,44 @@
           btnRemove.style.display = 'none'
        }
        //*deposit handler*//
-       const addDeposit = document.getElementById("depositBtn")
-    addDeposit.addEventListener("click", function(){
-        const depositAmount = document.getElementById('ammountOfDeposit').value
-        var finalDepositAmount = depositAmount
-        document.getElementById('ammountOfDeposit').value = ''
+     
         
-    })
+   
     const addWithdraw = document.getElementById("withdrawBtn")
     addWithdraw.addEventListener("click", function(){
-        const withdrawAmount = document.getElementById('withdrawAmount').value
+        const withdrawAmount1 = document.getElementById('withdrawAmount').value
+       const currentwithdrawamount1 = document.getElementById('currentwithdrawamount').innerText
+       const parsedwithdrawAmount = currentwithdrawamount1
+       const finalWithdrawAmount = +withdrawAmount1 + +parsedwithdrawAmount
+       document.getElementById('currentwithdrawamount').innerText = finalWithdrawAmount
+
+
+       const currentBalanceAmount = document.getElementById('currentBlance').innerText
+        const parsedBalanceAmount = +currentBalanceAmount - +withdrawAmount1
+        const finalBalanceAmount = parsedBalanceAmount
+        document.getElementById('currentBlance').innerText = finalBalanceAmount
+
+
         document.getElementById('withdrawAmount').value = ''
 
-        
+    })
+    const addDeposit = document.getElementById("depositBtn")
+      addDeposit.addEventListener("click", function(){
+        const depositAmount = document.getElementById('ammountOfDeposit').value
+        const currentdepositamount = document.getElementById('currentdepositamount').innerText
+        const parsedDepositAmount = +currentdepositamount + +depositAmount
+        const finalDepositAmount = parsedDepositAmount
+        document.getElementById('currentdepositamount').innerText = finalDepositAmount
+
+        const currentBalanceAmount = document.getElementById('currentBlance').innerText
+        const parsedBalanceAmount = +currentBalanceAmount + +depositAmount
+        const finalBalanceAmount = parsedBalanceAmount
+        document.getElementById('currentBlance').innerText = finalBalanceAmount
+
+
+        document.getElementById('ammountOfDeposit').value = ''
 
     })
-       
     </script>
 
     
