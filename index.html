@@ -14,8 +14,8 @@
         <h1>Welcome to Fokira bank</h1>
         <div class="input-part">
             <h2>Log in</h2><br>
-            <input type="text" class="form-control " placeholder="email"><br>
-            <input type="password"  class="form-control " placeholder="password"><br>
+            <input id="username" type="text" class="form-control " placeholder="username" DOMevent=”getVal()”><br>
+            <input id="password" type="password"  class="form-control " placeholder="password" ><br>
             <button id="login" class="btn  btn-success button">login </button>
         </div>
 
@@ -70,6 +70,20 @@
     
 
     <script>
+        function getVal() {
+            
+        
+        const uid = document.querySelector('input').value
+        console.log(uid);
+    }
+    function getPass() {
+        const pass = document.querySelector('input').value
+        console.log(pass);
+    }
+
+
+// if (uid='1122' , pass = '45' ) {
+
         var test = document.getElementById('login');
         test.addEventListener("click", function () {
             const loginArea = document.getElementById('loginArea')
@@ -102,11 +116,14 @@
        const finalWithdrawAmount = +withdrawAmount1 + +parsedwithdrawAmount
        document.getElementById('currentwithdrawamount').innerText = finalWithdrawAmount
 
+updateSpanText('currentBlance', withdrawAmount1)
 
-       const currentBalanceAmount = document.getElementById('currentBlance').innerText
+      function updateSpanText(id, withdrawAmount1 ) {
+        const currentBalanceAmount = document.getElementById(id).innerText
         const parsedBalanceAmount = +currentBalanceAmount - +withdrawAmount1
         const finalBalanceAmount = parsedBalanceAmount
-        document.getElementById('currentBlance').innerText = finalBalanceAmount
+        document.getElementById(id).innerText = finalBalanceAmount
+      }
 
 
         document.getElementById('withdrawAmount').value = ''
@@ -124,11 +141,15 @@
         const parsedBalanceAmount = +currentBalanceAmount + +depositAmount
         const finalBalanceAmount = parsedBalanceAmount
         document.getElementById('currentBlance').innerText = finalBalanceAmount
-
+        
 
         document.getElementById('ammountOfDeposit').value = ''
 
     })
+// }
+// else{
+//     console.log('invalid ');
+// }
     </script>
 
     
